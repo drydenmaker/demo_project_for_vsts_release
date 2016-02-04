@@ -7,6 +7,9 @@
         },
         "websiteName": {
             "value": "NO-NAME"
+        },
+        "connectionString": {
+            "value": "NOCONNECT"
         }
     }
 }
