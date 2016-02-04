@@ -78,7 +78,20 @@
         },
         "resources": [
             
-            
+            {
+                "apiVersion": "2015-08-01",
+                "name": "connectionstrings",
+                "type": "config",
+                "dependsOn": [
+                    "[resourceId('Microsoft.Web/Sites', parameters('webSiteName'))]"
+                ],
+                "properties": {
+                    "MyConnectionStringName": {
+                        "value": "parameters('connectionString')",
+                        "type": "SQLAzure"
+                    }
+                }
+            }
         ]
     },
     {
