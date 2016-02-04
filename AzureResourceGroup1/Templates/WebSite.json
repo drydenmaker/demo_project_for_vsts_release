@@ -77,7 +77,6 @@
             "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
         },
         "resources": [
-            
             {
                 "apiVersion": "2015-08-01",
                 "name": "connectionstrings",
@@ -90,6 +89,17 @@
                         "value": "parameters('connectionString')",
                         "type": "SQLAzure"
                     }
+                }
+            },
+            {
+                "apiVersion": "2015-08-01",
+                "name": "appsettings",
+                "type": "config",
+                "dependsOn": [
+                    "[resourceId('Microsoft.Web/Sites', parameters('webSiteName'))]"
+                ],
+                "properties": {
+                    "Validation": "set from environment deploymnet"
                 }
             }
         ]
